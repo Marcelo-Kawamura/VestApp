@@ -1,0 +1,176 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:2:1-25:12
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\7a5507108008d6cbf6a84867f13fdb9f\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\3ff2735f069df0d2ccdc6f3d6192e920\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ae8cfe129932e24224384bc0855fa33b\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\81db4318736196b185809d0f6b2efd7e\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\8c839f03b044d736e73570d86f623a82\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\dcfac38436d3fda9092114c7febc60f9\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\da4054a4fcbcca353aa5795a25d6b847\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\4dce6242b5b62e65e37f5d9db59194f9\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\26b64b3719f422257457b934f6f02c46\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\1b9f9a6523135771b2dfbec9f03871d9\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\da95027e69078ac80a29d4a2998dc09e\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\f16b768ae8881d106bba9d5d3255d657\AndroidManifest.xml:17:1-31:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\36b27579faacfb7ca9993a0dd9eabd7c\AndroidManifest.xml:17:1-30:12
+INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:2:1-25:12
+	package
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:3:5-44
+		INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:2:1-25:12
+		INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:2:1-25:12
+		INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:4:22-64
+application
+ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:5:5-23:19
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\7a5507108008d6cbf6a84867f13fdb9f\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\7a5507108008d6cbf6a84867f13fdb9f\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\3ff2735f069df0d2ccdc6f3d6192e920\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\3ff2735f069df0d2ccdc6f3d6192e920\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ae8cfe129932e24224384bc0855fa33b\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ae8cfe129932e24224384bc0855fa33b\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\81db4318736196b185809d0f6b2efd7e\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\81db4318736196b185809d0f6b2efd7e\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\8c839f03b044d736e73570d86f623a82\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\8c839f03b044d736e73570d86f623a82\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\dcfac38436d3fda9092114c7febc60f9\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\dcfac38436d3fda9092114c7febc60f9\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\da4054a4fcbcca353aa5795a25d6b847\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\da4054a4fcbcca353aa5795a25d6b847\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\4dce6242b5b62e65e37f5d9db59194f9\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\4dce6242b5b62e65e37f5d9db59194f9\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\26b64b3719f422257457b934f6f02c46\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\26b64b3719f422257457b934f6f02c46\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\1b9f9a6523135771b2dfbec9f03871d9\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\1b9f9a6523135771b2dfbec9f03871d9\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\da95027e69078ac80a29d4a2998dc09e\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\da95027e69078ac80a29d4a2998dc09e\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\f16b768ae8881d106bba9d5d3255d657\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\f16b768ae8881d106bba9d5d3255d657\AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\36b27579faacfb7ca9993a0dd9eabd7c\AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\36b27579faacfb7ca9993a0dd9eabd7c\AndroidManifest.xml:24:5-28:19
+	android:supportsRtl
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:11:9-79
+	android:name
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:12:9-53
+activity#com.example.renan.vestibulapp.presentation.main.MainActivity
+ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:14:9-20:20
+	android:name
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:14:19-65
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:15:13-19:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:18:27-74
+activity#com.example.renan.vestibulapp.presentation.login.LoginActivity
+ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:21:9-69
+	android:name
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:21:19-67
+activity#com.example.renan.vestibulapp.presentation.login.SignUpActivity
+ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:22:9-70
+	android:name
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml:22:19-68
+uses-sdk
+INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\7a5507108008d6cbf6a84867f13fdb9f\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\7a5507108008d6cbf6a84867f13fdb9f\AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\3ff2735f069df0d2ccdc6f3d6192e920\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\3ff2735f069df0d2ccdc6f3d6192e920\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ae8cfe129932e24224384bc0855fa33b\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\ae8cfe129932e24224384bc0855fa33b\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\81db4318736196b185809d0f6b2efd7e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\81db4318736196b185809d0f6b2efd7e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\8c839f03b044d736e73570d86f623a82\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\8c839f03b044d736e73570d86f623a82\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\dcfac38436d3fda9092114c7febc60f9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\dcfac38436d3fda9092114c7febc60f9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\da4054a4fcbcca353aa5795a25d6b847\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\da4054a4fcbcca353aa5795a25d6b847\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\4dce6242b5b62e65e37f5d9db59194f9\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\4dce6242b5b62e65e37f5d9db59194f9\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\26b64b3719f422257457b934f6f02c46\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\26b64b3719f422257457b934f6f02c46\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\1b9f9a6523135771b2dfbec9f03871d9\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\1b9f9a6523135771b2dfbec9f03871d9\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\da95027e69078ac80a29d4a2998dc09e\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\da95027e69078ac80a29d4a2998dc09e\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\f16b768ae8881d106bba9d5d3255d657\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\f16b768ae8881d106bba9d5d3255d657\AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\36b27579faacfb7ca9993a0dd9eabd7c\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\36b27579faacfb7ca9993a0dd9eabd7c\AndroidManifest.xml:20:5-22:41
+INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\3ff2735f069df0d2ccdc6f3d6192e920\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\renan\AndroidStudioProjects\vestibulapp\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\3ff2735f069df0d2ccdc6f3d6192e920\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\81db4318736196b185809d0f6b2efd7e\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\81db4318736196b185809d0f6b2efd7e\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\8c839f03b044d736e73570d86f623a82\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\8c839f03b044d736e73570d86f623a82\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\dcfac38436d3fda9092114c7febc60f9\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\dcfac38436d3fda9092114c7febc60f9\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\da4054a4fcbcca353aa5795a25d6b847\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\da4054a4fcbcca353aa5795a25d6b847\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\4dce6242b5b62e65e37f5d9db59194f9\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\4dce6242b5b62e65e37f5d9db59194f9\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\26b64b3719f422257457b934f6f02c46\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\26b64b3719f422257457b934f6f02c46\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\1b9f9a6523135771b2dfbec9f03871d9\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\1b9f9a6523135771b2dfbec9f03871d9\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\da95027e69078ac80a29d4a2998dc09e\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\da95027e69078ac80a29d4a2998dc09e\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\f16b768ae8881d106bba9d5d3255d657\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\f16b768ae8881d106bba9d5d3255d657\AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\3ff2735f069df0d2ccdc6f3d6192e920\AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\3ff2735f069df0d2ccdc6f3d6192e920\AndroidManifest.xml:27:13-51
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\36b27579faacfb7ca9993a0dd9eabd7c\AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\36b27579faacfb7ca9993a0dd9eabd7c\AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\renan\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\36b27579faacfb7ca9993a0dd9eabd7c\AndroidManifest.xml:26:13-58
