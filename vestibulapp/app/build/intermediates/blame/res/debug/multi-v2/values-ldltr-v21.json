@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\renan\\AndroidStudioProjects\\vestibulapp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
+            "outputFile": "/home/marcelo/AndroidStudioProjects/VestApp/vestibulapp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\renan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\3ff2735f069df0d2ccdc6f3d6192e920\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "source": "/home/marcelo/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/12e5e4dd5a812ea733023f536a351287/res/values-ldltr-v21/values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
