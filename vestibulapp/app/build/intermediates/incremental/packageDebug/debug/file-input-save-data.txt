@@ -1,7 +1,0 @@
-#Internal package file, do not edit.
-#Sat Dec 30 23:33:51 BRST 2017
-0.baseType=DIRECTORY
-0.base=/home/marcelo/AndroidStudioProjects/VestApp/vestibulapp/app/build/intermediates/transforms/dexMerger/debug/0
-0.path=classes.dex
-0.set=DEX
-count=1

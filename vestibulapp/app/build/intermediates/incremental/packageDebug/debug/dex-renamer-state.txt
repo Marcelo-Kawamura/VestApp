@@ -1,4 +1,0 @@
-#Sat Dec 30 23:33:50 BRST 2017
-base.0=/home/marcelo/AndroidStudioProjects/VestApp/vestibulapp/app/build/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex
