@@ -1,4 +1,4 @@
-package com.example.vestibular.vestibulapp.domain;
+package com.example.vestibular.vestibulapp.domain.entity;
 
 import android.app.Activity;
 import android.content.Context;

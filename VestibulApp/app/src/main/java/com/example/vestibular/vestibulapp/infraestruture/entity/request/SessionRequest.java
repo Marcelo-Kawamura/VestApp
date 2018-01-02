@@ -4,7 +4,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.example.vestibular.vestibulapp.domain.User;
+import com.example.vestibular.vestibulapp.domain.entity.User;
 import com.example.vestibular.vestibulapp.infraestruture.Constants;
 import com.example.vestibular.vestibulapp.infraestruture.URLs;
 import com.example.vestibular.vestibulapp.infraestruture.entity.parser.UserParser;

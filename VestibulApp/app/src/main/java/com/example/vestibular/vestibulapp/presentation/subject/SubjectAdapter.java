@@ -1,4 +1,4 @@
-package com.example.vestibular.vestibulapp.infraestruture.entity.adapter;
+package com.example.vestibular.vestibulapp.presentation.subject;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatImageView;
@@ -10,7 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.vestibular.vestibulapp.R;
-import com.example.vestibular.vestibulapp.domain.Subjects;
+import com.example.vestibular.vestibulapp.domain.entity.Subject;
 
 import java.util.ArrayList;
 
@@ -20,9 +20,9 @@ import java.util.ArrayList;
 
 public class SubjectAdapter extends BaseAdapter{
     Context context;
-    private ArrayList<Subjects> subjectsArrayList;
+    private ArrayList<Subject> subjectsArrayList;
 
-    public SubjectAdapter(Context context, ArrayList<Subjects> subjectsArrayList){
+    public SubjectAdapter(Context context, ArrayList<Subject> subjectsArrayList){
         this.context = context;
         this.subjectsArrayList = subjectsArrayList;
     }
@@ -36,7 +36,7 @@ public class SubjectAdapter extends BaseAdapter{
     @Override
     public long getItemId(int i) {return i;}
 
-    public Subjects getItemAtPosition(int i){
+    public Subject getItemAtPosition(int i){
         return subjectsArrayList.get(i);
     }
 
@@ -45,7 +45,7 @@ public class SubjectAdapter extends BaseAdapter{
         if(view == null){
             view = LayoutInflater.from(context).inflate(R.layout.fragment_subjects_item_list ,viewGroup, false);
         }
-        Subjects currentSubject = (Subjects) getItem(i);
+        Subject currentSubject = (Subject) getItem(i);
 
         TextView txtView_Topic_TopicList = (TextView) view.findViewById(R.id.txtView_subject);
         txtView_Topic_TopicList.setText(currentSubject.getSubject_name());

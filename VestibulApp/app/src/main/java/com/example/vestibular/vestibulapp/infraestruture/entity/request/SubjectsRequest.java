@@ -2,12 +2,11 @@ package com.example.vestibular.vestibulapp.infraestruture.entity.request;
 
 import android.util.Log;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.example.vestibular.vestibulapp.domain.Subjects;
+import com.example.vestibular.vestibulapp.domain.entity.Subject;
 import com.example.vestibular.vestibulapp.infraestruture.Constants;
 import com.example.vestibular.vestibulapp.infraestruture.URLs;
 
@@ -15,8 +14,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by marcelo on 31/12/17.
@@ -24,7 +21,7 @@ import java.util.Map;
 
 public class SubjectsRequest {
     private SubjectsInterface subjectsInterface;
-    private ArrayList<Subjects> subjectsArrayList;
+    private ArrayList<Subject> subjectsArrayList;
     String url = URLs.getForRequest(Constants.SUBJECTS_TAG);
     public SubjectsRequest(SubjectsRequest.SubjectsInterface subjectsInterface){
         this.subjectsInterface = subjectsInterface;
@@ -42,7 +39,7 @@ public class SubjectsRequest {
                         String subject_name;
                         String subject_icon;
 
-                        subjectsArrayList = new ArrayList<Subjects>();
+                        subjectsArrayList = new ArrayList<Subject>();
                         try {
                             JSONArray SubjectsArray = response.getJSONArray("data");
                             Log.d("url:", "chegou aqui");
@@ -52,7 +49,7 @@ public class SubjectsRequest {
                                 subject_id =SubjectsObjRequest.getInt("subject_id");
                                 subject_name = SubjectsObjRequest.getString("subject_name");
                                 subject_icon = SubjectsObjRequest.getString("subject_photo");
-                                Subjects subjects = new Subjects(subject_id,subject_name,subject_icon);
+                                Subject subjects = new Subject(subject_id,subject_name,subject_icon);
                                 subjectsArrayList.add(subjects);
                                 Log.d("url:", String.valueOf(subjectsArrayList.size()));
                             }
@@ -73,7 +70,7 @@ public class SubjectsRequest {
         AppController.getInstance().addToRequestQueue(SubjectsObjRequest);
     }
     public interface SubjectsInterface{
-        void onSubjectsResponse(ArrayList<Subjects> subjectsList);
+        void onSubjectsResponse(ArrayList<Subject> subjectsList);
     }
 
 }

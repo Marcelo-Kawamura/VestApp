@@ -1,15 +1,14 @@
 package com.example.vestibular.vestibulapp.presentation.login;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.vestibular.vestibulapp.R;
-import com.example.vestibular.vestibulapp.domain.Session;
-import com.example.vestibular.vestibulapp.domain.User;
+import com.example.vestibular.vestibulapp.domain.entity.Session;
+import com.example.vestibular.vestibulapp.domain.entity.User;
 import com.example.vestibular.vestibulapp.infraestruture.entity.request.UserRequest;
 import com.example.vestibular.vestibulapp.presentation.base.BaseActivity;
 import com.example.vestibular.vestibulapp.presentation.main.MainActivity;

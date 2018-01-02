@@ -6,14 +6,13 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.example.vestibular.vestibulapp.domain.Topics;
+import com.example.vestibular.vestibulapp.domain.entity.Topic;
 import com.example.vestibular.vestibulapp.infraestruture.Constants;
 import com.example.vestibular.vestibulapp.infraestruture.URLs;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.net.URLEncoder;
 import java.util.ArrayList;
 
 /**
@@ -22,7 +21,7 @@ import java.util.ArrayList;
 
 public class TopicsRequest {
     private TopicsRequest.TopicsInterface topicsInterface;
-    private ArrayList<Topics> topicsArrayList;
+    private ArrayList<Topic> topicsArrayList;
 
     public TopicsRequest(TopicsRequest.TopicsInterface topicsInterface){
         this.topicsInterface = topicsInterface;
@@ -47,7 +46,7 @@ public class TopicsRequest {
                                 topid_id =   topicsObject.getInt("topic_id");
                                 topic_name = topicsObject.getString("topic_name");
                                 subject_id=  topicsObject.getInt("subject_subject_id");
-                                Topics topics = new Topics(topid_id, topic_name,subject_id);
+                                Topic topics = new Topic(topid_id, topic_name,subject_id);
                                 topicsArrayList.add(topics);
                             }
                         }
@@ -67,7 +66,7 @@ public class TopicsRequest {
         AppController.getInstance().addToRequestQueue(jsObjRequest);
     }
     public interface TopicsInterface{
-        void onTopicsResponse(ArrayList<Topics> topicsArrayList);
+        void onTopicsResponse(ArrayList<Topic> topicsArrayList);
     }
 
 }

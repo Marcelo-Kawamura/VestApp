@@ -1,33 +1,30 @@
-package com.example.vestibular.vestibulapp.presentation.menu;
+package com.example.vestibular.vestibulapp.presentation.subject;
 
-import android.app.ActionBar;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
 import com.example.vestibular.vestibulapp.R;
-import com.example.vestibular.vestibulapp.domain.Subjects;
-import com.example.vestibular.vestibulapp.infraestruture.entity.adapter.SubjectAdapter;
+import com.example.vestibular.vestibulapp.domain.entity.Subject;
 import com.example.vestibular.vestibulapp.infraestruture.entity.request.SubjectsRequest;
 import com.example.vestibular.vestibulapp.presentation.base.BaseActivity;
-import com.example.vestibular.vestibulapp.presentation.base.ProgressBarFragment;
+import com.example.vestibular.vestibulapp.presentation.exercise.TrueFalseActivity;
+import com.example.vestibular.vestibulapp.presentation.topic.TopicsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SubjectsActivity extends  BaseActivity implements SubjectsRequest.SubjectsInterface{
-    List<Subjects> subjectsList;
+    List<Subject> subjectsList;
     SubjectAdapter customAdapter;
 
 
     RelativeLayout progressBarRelativeLayout;
-    ProgressBarFragment fragment;
+    TrueFalseActivity.ProgressBarFragment fragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +47,7 @@ public class SubjectsActivity extends  BaseActivity implements SubjectsRequest.S
 
     }
     @Override
-    public void onSubjectsResponse(ArrayList<Subjects> subjectsList) {
+    public void onSubjectsResponse(ArrayList<Subject> subjectsList) {
         this.subjectsList = subjectsList;
         customAdapter = new SubjectAdapter(this, subjectsList);
         ListView listViewSubjects = (ListView) findViewById(R.id.listView_Subject);
@@ -59,10 +56,10 @@ public class SubjectsActivity extends  BaseActivity implements SubjectsRequest.S
         listViewSubjects.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Subjects subjects = customAdapter.getItemAtPosition(i);
+                Subject subject = customAdapter.getItemAtPosition(i);
                 Intent intent = new Intent(SubjectsActivity.this, TopicsActivity.class);
-                intent.putExtra("subject_id", subjects.getSubject_id());
-                intent.putExtra("subject_name", subjects.getSubject_name());
+                intent.putExtra("subject_id", subject.getSubject_id());
+                intent.putExtra("subject_name", subject.getSubject_name());
                 startActivity(intent);
             }
         });

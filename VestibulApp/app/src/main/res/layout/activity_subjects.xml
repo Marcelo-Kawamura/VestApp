@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#0000d3"
     android:orientation="vertical"
-    tools:context="com.example.vestibular.vestibulapp.presentation.menu.SubjectsActivity">
+    tools:context="com.example.vestibular.vestibulapp.presentation.subject.SubjectsActivity">
 
     <TextView
         android:id="@+id/textView_logo_subject"

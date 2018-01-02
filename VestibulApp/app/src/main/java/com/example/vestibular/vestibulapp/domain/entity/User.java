@@ -1,4 +1,4 @@
-package com.example.vestibular.vestibulapp.domain;
+package com.example.vestibular.vestibulapp.domain.entity;
 
 /**
  * Created by marcelo on 30/12/17.

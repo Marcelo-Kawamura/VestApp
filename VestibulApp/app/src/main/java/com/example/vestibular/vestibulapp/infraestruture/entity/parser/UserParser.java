@@ -1,6 +1,6 @@
 package com.example.vestibular.vestibulapp.infraestruture.entity.parser;
 
-import com.example.vestibular.vestibulapp.domain.User;
+import com.example.vestibular.vestibulapp.domain.entity.User;
 
 import org.json.JSONObject;
 

@@ -1,15 +1,15 @@
-package com.example.vestibular.vestibulapp.domain;
+package com.example.vestibular.vestibulapp.domain.entity;
 
 /**
  * Created by marcelo on 31/12/17.
  */
 
-public class Subjects {
+public class Subject {
     private int subject_id;
     private String subject_name;
     private String subject_icon;
 
-    public Subjects(int subject_id, String subject_name, String subject_icon){
+    public Subject(int subject_id, String subject_name, String subject_icon){
         this.subject_id = subject_id;
         this.subject_name = subject_name;
         this.subject_icon = subject_icon;
@@ -20,3 +20,4 @@ public class Subjects {
     public String getSubject_icon(){return subject_icon;}
 
 }
+

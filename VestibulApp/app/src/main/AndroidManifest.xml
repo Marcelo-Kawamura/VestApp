@@ -25,8 +25,8 @@
         <activity android:name=".presentation.base.BaseActivity" />
         <activity android:name=".presentation.login.LoginActivity" />
         <activity android:name=".presentation.login.SignUpActivity" />
-        <activity android:name=".presentation.menu.SubjectsActivity" />
-        <activity android:name=".presentation.menu.TopicsActivity" />
+        <activity android:name=".presentation.subject.SubjectsActivity" />
+        <activity android:name=".presentation.topic.TopicsActivity" />
         <activity android:name=".presentation.exercise.TrueFalseActivity"></activity>
     </application>
 

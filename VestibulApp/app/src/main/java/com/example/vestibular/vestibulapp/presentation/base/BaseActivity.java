@@ -13,6 +13,20 @@ import android.view.WindowManager;
 import com.example.vestibular.vestibulapp.R;
 
 public class BaseActivity extends Activity {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
+        final View decorView = getWindow().getDecorView();
 
+        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+
+                        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+                    }
+                });
+    }
 }

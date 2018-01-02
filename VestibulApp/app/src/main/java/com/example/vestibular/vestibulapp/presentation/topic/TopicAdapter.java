@@ -1,4 +1,4 @@
-package com.example.vestibular.vestibulapp.infraestruture.entity.adapter;
+package com.example.vestibular.vestibulapp.presentation.topic;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.vestibular.vestibulapp.R;
-import com.example.vestibular.vestibulapp.domain.Topics;
+import com.example.vestibular.vestibulapp.domain.entity.Topic;
 
 import java.util.ArrayList;
 
@@ -18,9 +18,9 @@ import java.util.ArrayList;
 
 public class TopicAdapter extends BaseAdapter{
     Context context;
-    private ArrayList<Topics> topicsArrayList;
+    private ArrayList<Topic> topicsArrayList;
 
-    public TopicAdapter(Context context, ArrayList<Topics> topicsArrayList) {
+    public TopicAdapter(Context context, ArrayList<Topic> topicsArrayList) {
         this.context=context;
         this.topicsArrayList=topicsArrayList;
     }
@@ -40,7 +40,7 @@ public class TopicAdapter extends BaseAdapter{
         return i;
     }
 
-    public Topics getItemAtPosition(int position){
+    public Topic getItemAtPosition(int position){
         return topicsArrayList.get(position);
     }
 
@@ -54,7 +54,7 @@ public class TopicAdapter extends BaseAdapter{
         }
 
         // get current item to be displayed
-        Topics currentTopic = (Topics) getItem(position);
+        Topic currentTopic = (Topic) getItem(position);
 
         // get the TextView for item name and item description
         TextView txtView_Topic_TopicList = (TextView) convertView.findViewById(R.id.txtView_Topic_TopicList);

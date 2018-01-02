@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#0000d3"
     android:orientation="vertical"
-    tools:context="com.example.vestibular.vestibulapp.presentation.menu.TopicsActivity">
+    tools:context="com.example.vestibular.vestibulapp.presentation.topic.TopicsActivity">
 
     <TextView
         android:id="@+id/txtViewSubject"
