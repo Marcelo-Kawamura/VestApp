@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0000d3"
+    android:background="@color/colorMain"
     android:orientation="vertical"
     tools:context="com.example.vestibular.vestibulapp.presentation.subject.SubjectsActivity">
 
@@ -28,9 +28,9 @@
 
     <ListView
         android:id="@+id/listView_Subject"
-        android:layout_width="367dp"
-        android:layout_height="264dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@android:color/transparent"
         android:layout_marginTop="220dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

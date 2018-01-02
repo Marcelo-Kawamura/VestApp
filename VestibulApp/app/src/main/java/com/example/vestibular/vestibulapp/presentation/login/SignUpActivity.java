@@ -14,6 +14,7 @@ import com.example.vestibular.vestibulapp.presentation.base.BaseActivity;
 import com.example.vestibular.vestibulapp.presentation.main.MainActivity;
 
 public class SignUpActivity extends BaseActivity implements UserRequest.UsersRequestInterface {
+
     private EditText signInName;
     private EditText signInLastName;
     private EditText signInCpf;

@@ -50,7 +50,7 @@ public class TopicAdapter extends BaseAdapter{
 // inflate the layout for each list row
         if (convertView == null) {
             convertView = LayoutInflater.from(context).
-                    inflate(R.layout.fragment_topics_item_list, parent, false);
+                    inflate(R.layout.cell_topic_list_view, parent, false);
         }
 
         // get current item to be displayed

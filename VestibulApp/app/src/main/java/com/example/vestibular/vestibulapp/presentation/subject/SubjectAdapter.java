@@ -43,7 +43,7 @@ public class SubjectAdapter extends BaseAdapter{
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         if(view == null){
-            view = LayoutInflater.from(context).inflate(R.layout.fragment_subjects_item_list ,viewGroup, false);
+            view = LayoutInflater.from(context).inflate(R.layout.cell_subject_list_view ,viewGroup, false);
         }
         Subject currentSubject = (Subject) getItem(i);
 

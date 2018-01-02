@@ -31,20 +31,6 @@ public class SubjectsActivity extends  BaseActivity implements SubjectsRequest.S
         setContentView(R.layout.activity_subjects);
         SubjectsRequest subjectsRequest = new SubjectsRequest(this);
         subjectsRequest.sendRequest();
-
-        final View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
-        decorView.setOnSystemUiVisibilityChangeListener
-                (new View.OnSystemUiVisibilityChangeListener() {
-                    @Override
-                    public void onSystemUiVisibilityChange(int visibility) {
-                        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-                        decorView.setSystemUiVisibility(uiOptions);
-                    }
-                });
-
-
     }
     @Override
     public void onSubjectsResponse(ArrayList<Subject> subjectsList) {

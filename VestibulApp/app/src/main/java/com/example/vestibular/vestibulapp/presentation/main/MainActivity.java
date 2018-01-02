@@ -20,16 +20,6 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
         final View decorView = getWindow().getDecorView();
-//        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-//        decorView.setSystemUiVisibility(uiOptions);
-//        decorView.setOnSystemUiVisibilityChangeListener
-//                (new View.OnSystemUiVisibilityChangeListener() {
-//                    @Override
-//                    public void onSystemUiVisibilityChange(int visibility) {
-//                        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-//                        decorView.setSystemUiVisibility(uiOptions);
-//                    }
-//                });
 
         if (!Session.getInstance().isLogged(this)){
             Intent intent = new Intent(this, LoginActivity.class);

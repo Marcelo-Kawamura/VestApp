@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_list_view"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp">
+
+            <LinearLayout
+                android:id="@+id/thumbnail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp">
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/subject_icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp" />
+            </LinearLayout>
+
+            <!-- Subject-->
+            <TextView
+                android:id="@+id/txtView_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/thumbnail"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/thumbnail"
+                android:text="Subject"
+                android:textColor="#040404"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:typeface="sans" />
+
+            <!-- Número de módulos -->
+            <TextView
+                android:id="@+id/txtView_topics_qnt"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_below="@id/txtView_subject"
+                android:layout_marginTop="1dp"
+                android:layout_toRightOf="@+id/thumbnail"
+
+                android:layout_marginLeft="16dp"
+                android:text="Esta matéria possui 5 módulos"
+                android:textColor="#343434"
+                android:textSize="10dp" />
+
+            <!-- Desempenho -->
+            <TextView
+                android:id="@+id/performance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:text="8.0"
+                android:layout_marginRight="16dp"
+                android:textSize="10dp"
+                android:textColor="#10bcc9"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+
+</RelativeLayout>

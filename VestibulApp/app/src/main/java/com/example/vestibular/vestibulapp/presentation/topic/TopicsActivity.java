@@ -26,18 +26,6 @@ public class TopicsActivity extends BaseActivity implements TopicsRequest.Topics
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topics);
 
-        final View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
-        decorView.setOnSystemUiVisibilityChangeListener
-                (new View.OnSystemUiVisibilityChangeListener() {
-                    @Override
-                    public void onSystemUiVisibilityChange(int visibility) {
-                        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-                        decorView.setSystemUiVisibility(uiOptions);
-                    }
-                });
-
         Intent intent = getIntent();
         int subjectID = intent.getIntExtra("subject_id",0);
         String subject_name = intent.getStringExtra("subject_name");
