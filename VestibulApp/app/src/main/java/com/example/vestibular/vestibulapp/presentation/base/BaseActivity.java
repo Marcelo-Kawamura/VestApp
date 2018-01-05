@@ -12,7 +12,7 @@ import android.view.WindowManager;
 
 import com.example.vestibular.vestibulapp.R;
 
-public class BaseActivity extends Activity {
+public abstract class BaseActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -29,4 +29,5 @@ public class BaseActivity extends Activity {
                     }
                 });
     }
+
 }

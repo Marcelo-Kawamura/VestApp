@@ -1,4 +1,4 @@
-package com.example.vestibular.vestibulapp.infraestruture.entity.request;
+package com.example.vestibular.vestibulapp.infraestruture.request;
 
 import android.util.Log;
 

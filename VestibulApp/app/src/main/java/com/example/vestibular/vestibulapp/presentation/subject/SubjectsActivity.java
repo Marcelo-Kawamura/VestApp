@@ -6,13 +6,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 
 import com.example.vestibular.vestibulapp.R;
 import com.example.vestibular.vestibulapp.domain.entity.Subject;
-import com.example.vestibular.vestibulapp.infraestruture.entity.request.SubjectsRequest;
+import com.example.vestibular.vestibulapp.infraestruture.request.SubjectsRequest;
 import com.example.vestibular.vestibulapp.presentation.base.BaseActivity;
-import com.example.vestibular.vestibulapp.presentation.exercise.TrueFalseActivity;
 import com.example.vestibular.vestibulapp.presentation.topic.TopicsActivity;
 
 import java.util.ArrayList;
@@ -21,10 +19,6 @@ import java.util.List;
 public class SubjectsActivity extends  BaseActivity implements SubjectsRequest.SubjectsInterface{
     List<Subject> subjectsList;
     SubjectAdapter customAdapter;
-
-
-    RelativeLayout progressBarRelativeLayout;
-    TrueFalseActivity.ProgressBarFragment fragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

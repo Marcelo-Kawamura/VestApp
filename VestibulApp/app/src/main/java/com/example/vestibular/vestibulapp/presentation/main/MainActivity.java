@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.vestibular.vestibulapp.R;
+import com.example.vestibular.vestibulapp.domain.entity.ProblemTrueFalse;
 import com.example.vestibular.vestibulapp.domain.entity.Session;
 import com.example.vestibular.vestibulapp.presentation.base.BaseActivity;
 import com.example.vestibular.vestibulapp.presentation.login.LoginActivity;
+import com.example.vestibular.vestibulapp.presentation.problem.ProblemActivity;
 import com.example.vestibular.vestibulapp.presentation.subject.SubjectsActivity;
 
 public class MainActivity extends BaseActivity {
@@ -25,6 +27,8 @@ public class MainActivity extends BaseActivity {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
+        Intent intent = new Intent(this, ProblemActivity.class);
+        startActivity(intent);
     }
 
     public void subjectOpenAction(View view) {

@@ -10,9 +10,9 @@ import android.widget.TextView;
 
 import com.example.vestibular.vestibulapp.R;
 import com.example.vestibular.vestibulapp.domain.entity.Topic;
-import com.example.vestibular.vestibulapp.infraestruture.entity.request.TopicsRequest;
+import com.example.vestibular.vestibulapp.infraestruture.request.TopicsRequest;
 import com.example.vestibular.vestibulapp.presentation.base.BaseActivity;
-import com.example.vestibular.vestibulapp.presentation.exercise.TrueFalseActivity;
+import com.example.vestibular.vestibulapp.presentation.problem.ProblemActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +46,7 @@ public class TopicsActivity extends BaseActivity implements TopicsRequest.Topics
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Topic topic = customAdapter.getItemAtPosition(i);
-                Intent intent = new Intent(TopicsActivity.this, TrueFalseActivity.class);
+                Intent intent = new Intent(TopicsActivity.this, ProblemActivity.class);
                 intent.putExtra("topic_id", topic.getTopic_id());
                 intent.putExtra("subject_id", topic.getSubject_id());
                 startActivity(intent);

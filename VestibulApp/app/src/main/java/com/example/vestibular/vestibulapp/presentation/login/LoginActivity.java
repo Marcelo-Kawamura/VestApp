@@ -1,5 +1,6 @@
 package com.example.vestibular.vestibulapp.presentation.login;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +11,7 @@ import android.widget.Toast;
 import com.example.vestibular.vestibulapp.R;
 import com.example.vestibular.vestibulapp.domain.entity.Session;
 import com.example.vestibular.vestibulapp.presentation.base.BaseActivity;
-import com.example.vestibular.vestibulapp.presentation.exercise.TrueFalseActivity;
+import com.example.vestibular.vestibulapp.presentation.base.ProgressBarFragment;
 import com.example.vestibular.vestibulapp.presentation.main.MainActivity;
 
 public class LoginActivity extends BaseActivity implements Session.SessionInterface{
@@ -18,7 +19,7 @@ public class LoginActivity extends BaseActivity implements Session.SessionInterf
     EditText emailEditText;
     EditText passwordEditText;
     RelativeLayout progressBarRelativeLayout;
-    TrueFalseActivity.ProgressBarFragment fragment;
+    ProgressBarFragment fragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +29,7 @@ public class LoginActivity extends BaseActivity implements Session.SessionInterf
         passwordEditText = (EditText) findViewById(R.id.login_password);
     }
     public void showProgressBar(){
-        fragment = new TrueFalseActivity.ProgressBarFragment();
+        fragment = new ProgressBarFragment();
         this.getFragmentManager().beginTransaction().add(R.id.progress_bar_fragment, fragment).commit();
         progressBarRelativeLayout.setVisibility(View.VISIBLE);
         progressBarRelativeLayout.setClickable(true);

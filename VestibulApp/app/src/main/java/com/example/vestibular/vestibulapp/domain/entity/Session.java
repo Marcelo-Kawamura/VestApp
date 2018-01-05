@@ -4,13 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.example.vestibular.vestibulapp.infraestruture.entity.request.SessionRequest;
+import com.example.vestibular.vestibulapp.infraestruture.request.SessionRequest;
 
 /**
  * Created by marcelo on 30/12/17.
  */
 
-public class Session implements SessionRequest.SessionsRequestInterface{
+public class Session implements SessionRequest.OnResponseListener{
     private User user;
     private static volatile Session session = new Session();
     private SharedPreferences sharedPref;
@@ -26,7 +26,7 @@ public class Session implements SessionRequest.SessionsRequestInterface{
 
     public void initSession(String email, String password, Activity activity){
         sessionInterface = (SessionInterface) activity;
-        SessionRequest.getSessionByCredentials((SessionRequest.SessionsRequestInterface) this, email, password);
+        SessionRequest.getSessionByCredentials((SessionRequest.OnResponseListener) this, email, password);
         this.sessionInterface = sessionInterface;
         sharedPref = ((Context) activity).getSharedPreferences("preference_key",Context.MODE_PRIVATE);
     }

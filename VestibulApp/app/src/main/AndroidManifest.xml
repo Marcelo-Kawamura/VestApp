@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".infraestruture.entity.request.AppController"
+        android:name=".infraestruture.request.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -27,7 +27,7 @@
         <activity android:name=".presentation.login.SignUpActivity" />
         <activity android:name=".presentation.subject.SubjectsActivity" />
         <activity android:name=".presentation.topic.TopicsActivity" />
-        <activity android:name=".presentation.exercise.TrueFalseActivity"></activity>
+        <activity android:name=".presentation.problem.ProblemActivity"/>
     </application>
 
 </manifest>

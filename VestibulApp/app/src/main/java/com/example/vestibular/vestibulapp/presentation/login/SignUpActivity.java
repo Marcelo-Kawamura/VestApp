@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.example.vestibular.vestibulapp.R;
 import com.example.vestibular.vestibulapp.domain.entity.Session;
 import com.example.vestibular.vestibulapp.domain.entity.User;
-import com.example.vestibular.vestibulapp.infraestruture.entity.request.UserRequest;
+import com.example.vestibular.vestibulapp.infraestruture.request.UserRequest;
 import com.example.vestibular.vestibulapp.presentation.base.BaseActivity;
 import com.example.vestibular.vestibulapp.presentation.main.MainActivity;
 
