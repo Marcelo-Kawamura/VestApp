@@ -19,15 +19,16 @@
 
     <RelativeLayout
         android:id="@+id/drag_true_false"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
+        android:layout_marginStart="156dp"
         android:layout_marginTop="356dp"
-        android:background="#dddddd"
+        android:background="@drawable/shap_radius_corner"
+        android:clickable="true"
         android:padding="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:clickable="true">
+        android:gravity="center">
 
         <TextView
             android:id="@+id/true_false_description"
@@ -42,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginTop="340dp"
-        android:background="#dddddd"
+        android:background="#00dddddd"
         android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -61,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="340dp"
-        android:background="#dddddd"
+        android:background="#00dddddd"
         android:padding="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

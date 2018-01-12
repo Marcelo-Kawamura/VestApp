@@ -27,8 +27,7 @@ public class MainActivity extends BaseActivity {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
-        Intent intent = new Intent(this, ProblemActivity.class);
-        startActivity(intent);
+
     }
 
     public void subjectOpenAction(View view) {

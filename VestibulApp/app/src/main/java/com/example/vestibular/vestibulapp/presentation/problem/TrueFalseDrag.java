@@ -27,9 +27,11 @@ class TrueFalseDrag implements View.OnDragListener {
                 v.setBackgroundColor(Color.YELLOW);
                 break;
             case DragEvent.ACTION_DRAG_EXITED:
-                v.setBackgroundColor(Color.parseColor("#dddddd"));
+                v.setBackgroundColor(Color.parseColor("#00dddddd"));
                 break;
             case DragEvent.ACTION_DROP:
+                View view = (View) event.getLocalState();
+                view.setVisibility(View.GONE);
                 if(answer){
                     v.setBackgroundColor(Color.GREEN);
                     listener.onAnswerCorrect();

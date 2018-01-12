@@ -35,9 +35,9 @@ public class SubjectsRequest {
 
                     @Override
                     public void onResponse(JSONObject response) {
-                        int subject_id;
-                        String subject_name;
-                        String subject_icon;
+                        int subject_id=0;
+                        String subject_name="";
+                        String subject_icon="";
 
                         subjectsArrayList = new ArrayList<Subject>();
                         try {
@@ -45,10 +45,15 @@ public class SubjectsRequest {
                             Log.d("url:", "chegou aqui");
                             for(int i=0; i<SubjectsArray.length();i++){
                                 JSONObject SubjectsObjRequest = SubjectsArray.getJSONObject(i);
-
-                                subject_id =SubjectsObjRequest.getInt("subject_id");
-                                subject_name = SubjectsObjRequest.getString("subject_name");
-                                subject_icon = SubjectsObjRequest.getString("subject_photo");
+                                if(SubjectsObjRequest.has("subject_id")){
+                                    subject_id =SubjectsObjRequest.getInt("subject_id");
+                                }
+                                if(SubjectsObjRequest.has("subject_name")){
+                                    subject_name = SubjectsObjRequest.getString("subject_name");
+                                }
+                                if(SubjectsObjRequest.has("subject_photo")){
+                                    subject_icon = SubjectsObjRequest.getString("subject_photo");
+                                }
                                 Subject subjects = new Subject(subject_id,subject_name,subject_icon);
                                 subjectsArrayList.add(subjects);
                                 Log.d("url:", String.valueOf(subjectsArrayList.size()));

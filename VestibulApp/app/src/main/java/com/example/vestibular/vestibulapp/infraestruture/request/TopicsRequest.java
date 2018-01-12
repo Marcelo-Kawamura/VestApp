@@ -29,7 +29,6 @@ public class TopicsRequest {
 
     public void sendRequest(String subject_name){
         String url = URLs.getForRequest(Constants.TOPICS_TAG);
-        Log.d("url","chegou aqui");
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
 
@@ -45,7 +44,7 @@ public class TopicsRequest {
                                 JSONObject topicsObject = arrayTopics.getJSONObject(i);
                                 topid_id =   topicsObject.getInt("topic_id");
                                 topic_name = topicsObject.getString("topic_name");
-                                subject_id=  topicsObject.getInt("subject_subject_id");
+                                subject_id=  topicsObject.getInt("subject_id");
                                 Topic topics = new Topic(topid_id, topic_name,subject_id);
                                 topicsArrayList.add(topics);
                             }

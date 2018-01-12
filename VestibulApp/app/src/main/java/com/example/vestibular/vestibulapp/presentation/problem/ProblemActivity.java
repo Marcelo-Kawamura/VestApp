@@ -14,6 +14,7 @@ import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.example.vestibular.vestibulapp.R;
 import com.example.vestibular.vestibulapp.domain.entity.Problem;
@@ -42,12 +43,12 @@ public class ProblemActivity extends BaseActivity {
 
         //Mock problem
         problems = new ArrayList();
-        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","o céu é azul",0,true));
-        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","o céu é presto",0,false));
-        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","o porco tem rabo",0,true));
-        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","o macaco é feito de maça",0,false));
-
-
+        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","O céu é azul",0,true));
+        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","O céu é preto",0,false));
+        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","O porco tem rabo",0,true));
+        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","O macaco é feito de maça",0,false));
+        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","2 + 2 = 4 ",0,true));
+        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","Capital do Brasil é Rio de Janeiro",0,false));
         nextProblem();
     }
     public void nextProblem(){
@@ -60,24 +61,26 @@ public class ProblemActivity extends BaseActivity {
         setOneProblemFragment(problem, new ProblemListener() {
             @Override
             public void onAnswerCorrect() {
+                Toast.makeText(getApplicationContext(), "Parabens Você acertou", Toast.LENGTH_SHORT).show();
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         nextProblem();
                     }
-                }, 200);
+                }, 2000);
             }
 
             @Override
             public void onAnswerWrong() {
+                Toast.makeText(getApplicationContext(), "Você Errou", Toast.LENGTH_SHORT).show();
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         nextProblem();
                     }
-                }, 200);
+                }, 2000);
             }
         });
     }
@@ -86,7 +89,7 @@ public class ProblemActivity extends BaseActivity {
         switch (problem.getType()){
             case 0:
                 trueFalseFragment = new TrueFalseFragment();
-                trueFalseFragment.setUpTrueFalseDrag((ProblemTrueFalse)problem, listener);
+                trueFalseFragment.setUpFragment((ProblemTrueFalse)problem, listener);
                 this.getFragmentManager().beginTransaction().remove(activeFragment).commit();
                 this.getFragmentManager().beginTransaction().add(R.id.problem_true_false_fragment, trueFalseFragment).commit();
                 activeFragment = trueFalseFragment;
