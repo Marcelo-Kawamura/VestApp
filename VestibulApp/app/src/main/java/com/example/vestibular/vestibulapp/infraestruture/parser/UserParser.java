@@ -11,6 +11,7 @@ import org.json.JSONObject;
 public class UserParser implements BaseParser {
     @Override
     public Object jsonToEntity(JSONObject response) {
+        int id;
         String name;
         String lastName;
         String email;
@@ -28,7 +29,8 @@ public class UserParser implements BaseParser {
             email = response.getString("student_email");
             cpf = response.getString("student_cpf");
             token = response.getString("student_token");
-            user = new User(name,lastName,email,cpf,token);
+            id = response.getInt("student_id");
+            user = new User(id,name,lastName,email,cpf,token);
         }catch(Exception ex){
             return null;
         }

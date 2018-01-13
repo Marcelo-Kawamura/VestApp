@@ -19,6 +19,8 @@ import android.widget.Toast;
 import com.example.vestibular.vestibulapp.R;
 import com.example.vestibular.vestibulapp.domain.entity.Problem;
 import com.example.vestibular.vestibulapp.domain.entity.ProblemTrueFalse;
+import com.example.vestibular.vestibulapp.domain.entity.User;
+import com.example.vestibular.vestibulapp.infraestruture.request.ProblemRequest;
 import com.example.vestibular.vestibulapp.presentation.base.BaseActivity;
 
 import java.util.ArrayList;
@@ -27,38 +29,32 @@ import java.util.ArrayList;
  * Created by renan on 02/01/2018.
  */
 
-public class ProblemActivity extends BaseActivity {
-    private TrueFalseFragment trueFalseFragment;
+public class ProblemActivity extends BaseActivity implements ProblemRequest.OnResponseListener {
+        private TrueFalseFragment trueFalseFragment;
     private Fragment activeFragment;
-
+    private int topicId;
+    private int lastProblemId;
+    private int lastAnswer;
     // mock variable
-    private ArrayList<Problem> problems;
+    private Problem currentProblem;
     int i=-1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_problem);
+        Intent intent = getIntent();
+        topicId = intent.getIntExtra("topic_id",0);
         activeFragment = new Fragment();
+        lastProblemId = -1;
+        lastAnswer = -1;
+        //first problem
+        ProblemRequest.getProblemFromStack(this,lastProblemId,lastAnswer,topicId);
 
-        //Mock problem
-        problems = new ArrayList();
-        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","O céu é azul",0,true));
-        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","O céu é preto",0,false));
-        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","O porco tem rabo",0,true));
-        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","O macaco é feito de maça",0,false));
-        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","2 + 2 = 4 ",0,true));
-        problems.add(new ProblemTrueFalse(1,"conhecimentos gerais","Capital do Brasil é Rio de Janeiro",0,false));
-        nextProblem();
     }
-    public void nextProblem(){
-        if(problems.size()>i+1){
-            i++;
-        }else{
-            i=0;
-        }
-        Problem problem = problems.get(i);
-        setOneProblemFragment(problem, new ProblemListener() {
+    public void showProblemForUser(){
+
+        setOneProblemFragment(currentProblem, new ProblemListener() {
             @Override
             public void onAnswerCorrect() {
                 Toast.makeText(getApplicationContext(), "Parabens Você acertou", Toast.LENGTH_SHORT).show();
@@ -66,7 +62,8 @@ public class ProblemActivity extends BaseActivity {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        nextProblem();
+                        lastAnswer = 1;
+                        requestNextProblem();
                     }
                 }, 2000);
             }
@@ -78,11 +75,16 @@ public class ProblemActivity extends BaseActivity {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        nextProblem();
+                        lastAnswer = 0;
+                        requestNextProblem();
                     }
                 }, 2000);
             }
         });
+    }
+    public void requestNextProblem(){
+        lastProblemId = currentProblem.getId();
+        ProblemRequest.getProblemFromStack(this,lastProblemId,lastAnswer,topicId);
     }
 
     public void setOneProblemFragment(Problem problem,ProblemListener listener){
@@ -99,4 +101,15 @@ public class ProblemActivity extends BaseActivity {
         }
     }
 
+
+    @Override
+    public void onProblemsRequestResponse(Problem problem) {
+        currentProblem = problem;
+        showProblemForUser();
+    }
+
+    @Override
+    public void onProblemsRequestError() {
+
+    }
 }

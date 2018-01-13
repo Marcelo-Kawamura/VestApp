@@ -10,7 +10,7 @@ public class ProblemCheck extends Problem{
     private int idCheck;
     private String description;
     private ArrayList<Item> items;
-    public ProblemCheck(int id, String topic, int type,int idCheck,String description,ArrayList items) {
+    public ProblemCheck(int id, int topic, int type,int idCheck,String description,ArrayList items) {
         super(id, topic, type);
         this.idCheck = idCheck;
         this.description = description;

@@ -37,12 +37,11 @@ public class UserRequest {
                     public void onResponse(JSONObject response) {
                         try{Log.d("string","string");
                             if(response.getInt("status")==0){
-
                                 usersRequestInterface.onUsersRequestError();
                             }else{
                                 String token = response.getJSONObject("data").getString("student_token");
-                                Log.d("string",token);
-                                User user = new User(name,lastName,email,cpf,token);
+                                int id =  response.getJSONObject("data").getInt("student_id");
+                                User user = new User(id,name,lastName,email,cpf,token);
                                 usersRequestInterface.onUsersRequestResponse(user);
                             }
                         }catch(Exception ex){

@@ -40,6 +40,7 @@ public class Session implements SessionRequest.OnResponseListener{
     public void startSession(User user){
         SharedPreferences.Editor editor;
         editor = sharedPref.edit();
+        editor.putInt("user_id",user.getId());
         editor.putString("user_name",user.getName());
         editor.putString("user_lastName",user.getLastName());
         editor.putString("user_email",user.getEmail());
@@ -51,12 +52,7 @@ public class Session implements SessionRequest.OnResponseListener{
         sharedPref = context.getSharedPreferences("preference_key",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor;
         editor = sharedPref.edit();
-        editor.putString("user_name",user.getName());
-        editor.putString("user_lastName",user.getLastName());
-        editor.putString("user_email",user.getEmail());
-        editor.putString("user_cpf",user.getCpf());
-        editor.putString("user_token", user.getToken());
-        editor.commit();
+        startSession(user);
     }
     public User getUser(){
         return user;
@@ -64,19 +60,21 @@ public class Session implements SessionRequest.OnResponseListener{
 
     public boolean isLogged(Context context){
         SharedPreferences sharedPref = context.getSharedPreferences("preference_key",Context.MODE_PRIVATE);
+        int id = sharedPref.getInt("user_id",0);
         String name = sharedPref.getString("user_name", "notLogged");
         String lastName = sharedPref.getString("user_lastName", "notLogged");
         String email = sharedPref.getString("user_email", "notLogged");
         String cpf = sharedPref.getString("user_cpf", "notLogged");
         String token = sharedPref.getString("user_token", "notLogged");
-        if(     token.equals("notLogged")&&
-                token.equals("notLogged")&&
-                token.equals("notLogged")&&
-                token.equals("notLogged")&&
+        if(     id == 0 ||
+                token.equals("notLogged")||
+                token.equals("notLogged")||
+                token.equals("notLogged")||
+                token.equals("notLogged")||
                 token.equals("notLogged")){
             return false;
         }
-        this.user = new User(name,lastName,email,cpf,token);
+        this.user = new User(id,name,lastName,email,cpf,token);
         return true;
     }
 

@@ -2,6 +2,7 @@ package com.example.vestibular.vestibulapp.infraestruture.request;
 
 import android.util.Log;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -14,6 +15,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by marcelo on 31/12/17.
@@ -61,7 +64,14 @@ public class TopicsRequest {
                         Log.d( "Erro", error.toString());
 
                     }
-                });
+                }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String>  params = new HashMap<String, String>();
+                params.put("Content-Type", "application/json");
+                return params;
+            }
+        };
         AppController.getInstance().addToRequestQueue(jsObjRequest);
     }
     public interface TopicsInterface{

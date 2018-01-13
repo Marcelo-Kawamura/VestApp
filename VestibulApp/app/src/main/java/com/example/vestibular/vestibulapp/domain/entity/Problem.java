@@ -5,10 +5,18 @@ package com.example.vestibular.vestibulapp.domain.entity;
  */
 
 public abstract class Problem {
+    public int getId() {
+        return id;
+    }
+
+    public int getTopic() {
+        return topic;
+    }
+
     private int id;
-    private String topic;
+    private int topic;
     private int type;
-    public Problem(int id,String topic, int type){
+    public Problem(int id,int topic, int type){
         this.type= type;
         this.id = id;
         this.topic = topic;

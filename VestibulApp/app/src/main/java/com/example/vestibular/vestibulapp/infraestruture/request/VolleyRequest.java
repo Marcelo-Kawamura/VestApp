@@ -2,6 +2,7 @@ package com.example.vestibular.vestibulapp.infraestruture.request;
 
 import android.util.Log;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -16,6 +17,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -25,15 +27,17 @@ import java.util.Map;
  public class VolleyRequest {
     private OnResponseListener listener;
     private String TAG;
+    private String url;
     private BaseParser baseParser;
-    public VolleyRequest(BaseParser baseParser,String TAG,OnResponseListener listener ){
+    public VolleyRequest(BaseParser baseParser,String url,String TAG,OnResponseListener listener ){
         this.listener = listener;
         this.baseParser = baseParser;
+        this.url=url;
         this.TAG = TAG;
     }
     private void setUpRequest(final Map params, final int METHOD){
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (METHOD, TAG, new JSONObject(params), new Response.Listener<JSONObject>() {
+                (METHOD, url, new JSONObject(params), new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         listener.onResponse(baseParser.jsonToEntity(response));
@@ -43,7 +47,14 @@ import java.util.Map;
                     public void onErrorResponse(VolleyError error) {
                         listener.onErrorResponse(error);
                     }
-                });
+                }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String>  params = new HashMap<String, String>();
+                params.put("Content-Type", "application/json");
+                return params;
+            }
+        };
         AppController.getInstance().cancelPendingRequests(TAG);
         AppController.getInstance().addToRequestQueue(jsObjRequest);
     }

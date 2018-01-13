@@ -32,7 +32,6 @@ public class SignUpActivity extends BaseActivity implements UserRequest.UsersReq
         signInEmail = findViewById(R.id.sign_in_email);
         signInPassword = findViewById(R.id.sign_in_password);
         signInRepeatPassword= findViewById(R.id.sign_in_repeat_password);
-
     }
     public void newUserAction(View view){
         UserRequest.createNewUser((UserRequest.UsersRequestInterface) SignUpActivity.this,signInName.getText().toString(),signInLastName.getText().toString(),signInCpf.getText().toString(),signInEmail.getText().toString(),signInPassword.getText().toString());

@@ -23,7 +23,7 @@ public class SessionRequest {
         final Map<String, String> params = new HashMap<String, String>();
         params.put("student_email", email);
         params.put("student_password", password);
-        VolleyRequest volleyRequest = new VolleyRequest(new UserParser(),Constants.SESSIONS_TAG,new VolleyRequest.OnResponseListener(){
+        VolleyRequest volleyRequest = new VolleyRequest(new UserParser(),URLs.getForRequest(Constants.SESSIONS_TAG),Constants.SESSIONS_TAG,new VolleyRequest.OnResponseListener(){
             @Override
             public void onResponse(Object entity) {
                 listener.onSessionsRequestResponse((User)entity);

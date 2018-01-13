@@ -5,12 +5,18 @@ package com.example.vestibular.vestibulapp.domain.entity;
  */
 
 public class User {
+    public int getId() {
+        return id;
+    }
+
+    private int id;
     private String name;
     private String lastName;
     private String email;
     private String cpf;
     private String token;
-    public User(String name,String lastName,String email,String cpf,String token){
+    public User(int id,String name,String lastName,String email,String cpf,String token){
+        this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.cpf = cpf;
