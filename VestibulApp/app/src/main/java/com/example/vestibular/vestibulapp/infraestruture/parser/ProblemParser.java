@@ -18,7 +18,7 @@ public class ProblemParser implements BaseParser {
             response = response.getJSONObject("data");
             if(response.has("problem_type_id")){
 
-                    switch(response.getInt("problem_type")){
+                    switch(response.getInt("problem_type_id")){
                         case 1:
                             ProblemTrueFalseParser problemTrueFalseParser = new ProblemTrueFalseParser();
                             return problemTrueFalseParser.jsonToEntity(response);

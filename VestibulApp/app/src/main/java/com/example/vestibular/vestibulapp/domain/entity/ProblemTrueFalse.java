@@ -24,7 +24,8 @@ public class ProblemTrueFalse extends Problem {
         this.problemTrueFalseId = trueFalseProblemId;
         this.solution = solution;
         this.sequence = sequence;
-        int descriptionChose = (int)Math.random()*4;
+        int descriptionChose = (int)(Math.random()*4);
+
         switch (descriptionChose){
             case 0:
                 description = trueStatement;

@@ -89,7 +89,7 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
 
     public void setOneProblemFragment(Problem problem,ProblemListener listener){
         switch (problem.getType()){
-            case 0:
+            case 1:
                 trueFalseFragment = new TrueFalseFragment();
                 trueFalseFragment.setUpFragment((ProblemTrueFalse)problem, listener);
                 this.getFragmentManager().beginTransaction().remove(activeFragment).commit();
