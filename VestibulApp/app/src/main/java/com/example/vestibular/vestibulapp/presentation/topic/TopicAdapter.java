@@ -1,10 +1,13 @@
 package com.example.vestibular.vestibulapp.presentation.topic;
 
 import android.content.Context;
+import android.support.v7.widget.AppCompatImageView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.vestibular.vestibulapp.R;
@@ -19,10 +22,12 @@ import java.util.ArrayList;
 public class TopicAdapter extends BaseAdapter{
     Context context;
     private ArrayList<Topic> topicsArrayList;
+    String subject_icon;
 
-    public TopicAdapter(Context context, ArrayList<Topic> topicsArrayList) {
+    public TopicAdapter(Context context, ArrayList<Topic> topicsArrayList, String subject_icon) {
         this.context=context;
         this.topicsArrayList=topicsArrayList;
+        this.subject_icon = subject_icon;
     }
 
     @Override
@@ -63,6 +68,10 @@ public class TopicAdapter extends BaseAdapter{
         //sets the text for item name and item description from the current item object
         txtView_Topic_TopicList.setText(currentTopic.getTopic_name());
         txtView_performance_TopicList.setText("100%");
+
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.subject_icon);
+        int id = context.getResources().getIdentifier(subject_icon,"drawable",context.getPackageName());
+        imageView.setImageResource(id);
 
         // returns the view for the current row
         return convertView;

@@ -40,6 +40,7 @@ public class SubjectsActivity extends  BaseActivity implements SubjectsRequest.S
                 Intent intent = new Intent(SubjectsActivity.this, TopicsActivity.class);
                 intent.putExtra("subject_id", subject.getSubject_id());
                 intent.putExtra("subject_name", subject.getSubject_name());
+                intent.putExtra("subject_icon", subject.getSubject_icon());
                 startActivity(intent);
             }
         });

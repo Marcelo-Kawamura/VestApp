@@ -17,7 +17,7 @@
 
         <ImageView
             android:layout_marginLeft="4dp"
-            android:id="@+id/list_image"
+            android:id="@+id/subject_icon"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/biology_icon" />
@@ -27,9 +27,9 @@
             android:id="@+id/txtView_Topic_TopicList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/list_image"
+            android:layout_alignTop="@+id/subject_icon"
             android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@+id/list_image"
+            android:layout_toRightOf="@+id/subject_icon"
             android:text="Rihanna Love the way lie"
             android:textColor="#040404"
             android:textSize="15dp"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txtView_Topic_TopicList"
             android:layout_marginTop="1dip"
-            android:layout_toRightOf="@+id/list_image"
+            android:layout_toRightOf="@+id/subject_icon"
             android:layout_toLeftOf="@+id/arrow"
             android:layout_marginLeft="16dp"
             android:text="Just gona stand there and ..."

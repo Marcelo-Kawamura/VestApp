@@ -21,25 +21,28 @@ public class TopicsActivity extends BaseActivity implements TopicsRequest.Topics
 
     List<Topic> topicsArrayList;
     TopicAdapter customAdapter;
+    String subject_icon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topics);
 
         Intent intent = getIntent();
-        int subjectID = intent.getIntExtra("subject_id",0);
+        int subject_id = intent.getIntExtra("subject_id",0);
         String subject_name = intent.getStringExtra("subject_name");
+        subject_icon = intent.getStringExtra("subject_icon");
+
         Log.d("subject_name", subject_name);
         TextView txtViewSubject = (TextView) findViewById(R.id.txtViewSubject);
         TopicsRequest topicsRequest = new TopicsRequest(this);
-        topicsRequest.sendRequest(subject_name);
+        topicsRequest.sendRequest(subject_id);
 
     }
 
     @Override
     public void onTopicsResponse(ArrayList<Topic> topicsArrayList)  {
         this.topicsArrayList = topicsArrayList;
-        customAdapter =  new TopicAdapter(this,topicsArrayList);
+        customAdapter =  new TopicAdapter(this,topicsArrayList, subject_icon);
         ListView listViewTopics = (ListView) findViewById(R.id.listViewTopics);
         listViewTopics.setAdapter(customAdapter);
         listViewTopics.setOnItemClickListener(new AdapterView.OnItemClickListener(){

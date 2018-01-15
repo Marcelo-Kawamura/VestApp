@@ -30,8 +30,9 @@ public class TopicsRequest {
         this.topicsInterface = topicsInterface;
     }
 
-    public void sendRequest(String subject_name){
-        String url = URLs.getForRequest(Constants.TOPICS_TAG);
+    public void sendRequest(int subject_id){
+        String url = URLs.getUrlWithValue(Constants.TOPICS_BY_SUBJECT_TAG, Integer.toString(subject_id) );
+        Log.d("url:",url );
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
 
