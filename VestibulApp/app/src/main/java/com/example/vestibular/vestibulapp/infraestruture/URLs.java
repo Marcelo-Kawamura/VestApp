@@ -12,6 +12,8 @@ public class URLs {
     static private final String TOPICS_URL = "/topics";
     static private final String TOPICS_BY_SUBJECT_URL = "/topics/subject/";
     static private final String STACK_PROBLEMS_URL = "/stackproblems/getnextfromstack/topic/";
+    static private final String STACK_PROBLEMS_INITIALIZE_URL = "/stackproblems/initialize";
+
 
     static public String getForRequest(String value){
         switch (value) {
@@ -23,6 +25,9 @@ public class URLs {
                 return path + SUBJECTS_URL;
             case Constants.TOPICS_TAG:
                 return path + TOPICS_URL;
+            case Constants.INITIALIZE_STACK_TAG:
+                return path + STACK_PROBLEMS_INITIALIZE_URL;
+
             default:
                 return "";
         }
@@ -33,6 +38,8 @@ public class URLs {
                 return path + STACK_PROBLEMS_URL + param;
             case Constants.TOPICS_BY_SUBJECT_TAG:
                 return path + TOPICS_BY_SUBJECT_URL + param;
+
+
             default:
                 return "";
         }

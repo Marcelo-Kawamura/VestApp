@@ -20,6 +20,8 @@ import com.example.vestibular.vestibulapp.R;
 import com.example.vestibular.vestibulapp.domain.entity.Problem;
 import com.example.vestibular.vestibulapp.domain.entity.ProblemTrueFalse;
 import com.example.vestibular.vestibulapp.domain.entity.User;
+import com.example.vestibular.vestibulapp.infraestruture.Constants;
+import com.example.vestibular.vestibulapp.infraestruture.request.InitializeStackRequest;
 import com.example.vestibular.vestibulapp.infraestruture.request.ProblemRequest;
 import com.example.vestibular.vestibulapp.presentation.base.BaseActivity;
 
@@ -30,9 +32,9 @@ import java.util.ArrayList;
  */
 
 public class ProblemActivity extends BaseActivity implements ProblemRequest.OnResponseListener {
-        private TrueFalseFragment trueFalseFragment;
+    private TrueFalseFragment trueFalseFragment;
     private Fragment activeFragment;
-    private int topicId;
+    private int topic_id;
     private int lastProblemId;
     private int lastAnswer;
     // mock variable
@@ -44,12 +46,13 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_problem);
         Intent intent = getIntent();
-        topicId = intent.getIntExtra("topic_id",0);
+        topic_id = intent.getIntExtra("topic_id",0);
         activeFragment = new Fragment();
         lastProblemId = -1;
         lastAnswer = -1;
         //first problem
-        ProblemRequest.getProblemFromStack(this,lastProblemId,lastAnswer,topicId);
+
+        ProblemRequest.getProblemFromStack(this,lastProblemId,lastAnswer,topic_id);
 
     }
     public void showProblemForUser(){
@@ -57,7 +60,7 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
         setOneProblemFragment(currentProblem, new ProblemListener() {
             @Override
             public void onAnswerCorrect() {
-                Toast.makeText(getApplicationContext(), "Parabens Você acertou", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Parabéns Você acertou", Toast.LENGTH_SHORT).show();
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
@@ -65,7 +68,7 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
                         lastAnswer = 1;
                         requestNextProblem();
                     }
-                }, 2000);
+                }, Constants.DELAY_NEXT_QUESTION);
             }
 
             @Override
@@ -78,13 +81,13 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
                         lastAnswer = 0;
                         requestNextProblem();
                     }
-                }, 2000);
+                }, Constants.DELAY_NEXT_QUESTION);
             }
         });
     }
     public void requestNextProblem(){
         lastProblemId = currentProblem.getId();
-        ProblemRequest.getProblemFromStack(this,lastProblemId,lastAnswer,topicId);
+        ProblemRequest.getProblemFromStack(this,lastProblemId,lastAnswer,topic_id);
     }
 
     public void setOneProblemFragment(Problem problem,ProblemListener listener){
@@ -112,4 +115,5 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
     public void onProblemsRequestError() {
 
     }
+
 }
