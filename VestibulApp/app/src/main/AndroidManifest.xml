@@ -27,7 +27,8 @@
         <activity android:name=".presentation.login.SignUpActivity" />
         <activity android:name=".presentation.subject.SubjectsActivity" />
         <activity android:name=".presentation.topic.TopicsActivity" />
-        <activity android:name=".presentation.problem.ProblemActivity"/>
+        <activity android:name=".presentation.problem.ProblemActivity" />
+        <activity android:name=".presentation.ResultsActivity"></activity>
     </application>
 
 </manifest>

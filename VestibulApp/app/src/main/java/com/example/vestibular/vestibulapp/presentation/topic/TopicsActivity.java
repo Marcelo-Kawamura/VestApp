@@ -26,6 +26,7 @@ public class TopicsActivity extends BaseActivity implements TopicsRequest.Topics
     List<Topic> topicsArrayList;
     TopicAdapter customAdapter;
     String subject_icon;
+    public int student_id = Session.getInstance().getUser().getId();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +57,6 @@ public class TopicsActivity extends BaseActivity implements TopicsRequest.Topics
                 Intent intent = new Intent(TopicsActivity.this, ProblemActivity.class);
                 intent.putExtra("topic_id", topic.getTopic_id());
                 intent.putExtra("subject_id", topic.getSubject_id());
-                int student_id = Session.getInstance().getUser().getId();
                 InitializeStackRequest.initializeStack(TopicsActivity.this,student_id,1,topic.getTopic_id());
                 startActivity(intent);
 

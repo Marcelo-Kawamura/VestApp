@@ -29,8 +29,13 @@ public class InitializeStackRequest {
                 listener.onInitializeStackResponse((Problem)entity);
             }
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void onResponseError(VolleyError error) {
                 listener.onInitializeStackRequestError();
+            }
+
+            @Override
+            public void onResponseEmpty() {
+
             }
         });
         volleyRequest.setPostRequest(params);

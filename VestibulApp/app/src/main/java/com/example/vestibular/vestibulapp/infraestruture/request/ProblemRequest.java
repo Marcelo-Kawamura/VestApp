@@ -27,8 +27,13 @@ public class ProblemRequest {
                 listener.onProblemsRequestResponse((Problem)entity);
             }
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void onResponseError(VolleyError error) {
                 listener.onProblemsRequestError();
+            }
+
+            @Override
+            public void onResponseEmpty() {
+                listener.onProblemsRequestEmpty();
             }
         });
         volleyRequest.setPostRequest(params);
@@ -37,5 +42,8 @@ public class ProblemRequest {
     public interface OnResponseListener{
         public void onProblemsRequestResponse(Problem problem);
         public void onProblemsRequestError();
+        public void onProblemsRequestEmpty();
+
     }
+
 }

@@ -33,6 +33,7 @@ public class SubjectsActivity extends  BaseActivity implements SubjectsRequest.S
         ListView listViewSubjects = (ListView) findViewById(R.id.listView_Subject);
         listViewSubjects.setAdapter(customAdapter);
 
+
         listViewSubjects.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

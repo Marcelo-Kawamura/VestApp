@@ -1,22 +1,14 @@
 package com.example.vestibular.vestibulapp.infraestruture.request;
 
-import android.util.Log;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.example.vestibular.vestibulapp.domain.entity.Session;
-import com.example.vestibular.vestibulapp.domain.entity.Topic;
-import com.example.vestibular.vestibulapp.infraestruture.Constants;
-import com.example.vestibular.vestibulapp.infraestruture.URLs;
 import com.example.vestibular.vestibulapp.infraestruture.parser.BaseParser;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,12 +32,23 @@ import java.util.Map;
                 (METHOD, url, new JSONObject(params), new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        listener.onResponse(baseParser.jsonToEntity(response));
+                        try {
+                            response = response.getJSONObject("data");
+                            if (response.has("null")) {
+                                listener.onResponseEmpty();
+                            } else {
+                                listener.onResponse(baseParser.jsonToEntity(response));
+                            }
+                        }
+                        catch (Exception ex){
+                            //TODO Criar tratamento de exception quando há falhas ao pegar dados
+                        }
+
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        listener.onErrorResponse(error);
+                        listener.onResponseError(error);
                     }
                 }) {
             @Override
@@ -66,6 +69,8 @@ import java.util.Map;
     }
     public interface OnResponseListener{
         void onResponse(Object entity);
-        void onErrorResponse(VolleyError error);
+        void onResponseError(VolleyError error);
+        void onResponseEmpty();
+
     }
 }

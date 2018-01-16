@@ -116,4 +116,11 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
 
     }
 
+    @Override
+    public void onProblemsRequestEmpty() {
+        //TODO - abrir activity de fim
+
+
+    }
+
 }

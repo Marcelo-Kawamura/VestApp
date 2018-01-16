@@ -29,8 +29,13 @@ public class SessionRequest {
                 listener.onSessionsRequestResponse((User)entity);
             }
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void onResponseError(VolleyError error) {
                 listener.onSessionsRequestError();
+            }
+
+            @Override
+            public void onResponseEmpty() {
+
             }
         });
         volleyRequest.setPostRequest(params);
