@@ -28,7 +28,7 @@
         <activity android:name=".presentation.subject.SubjectsActivity" />
         <activity android:name=".presentation.topic.TopicsActivity" />
         <activity android:name=".presentation.problem.ProblemActivity" />
-        <activity android:name=".presentation.ResultsActivity"></activity>
+        <activity android:name=".presentation.results.ResultsActivity"></activity>
     </application>
 
 </manifest>

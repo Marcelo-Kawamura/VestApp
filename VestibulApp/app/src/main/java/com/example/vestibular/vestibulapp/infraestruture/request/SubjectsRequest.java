@@ -38,6 +38,7 @@ public class SubjectsRequest {
 
                     @Override
                     public void onResponse(JSONObject response) {
+                        Log.d("msg:", "chegou aqui");
                         int subject_id=0;
                         String subject_name="";
                         String subject_icon="";
@@ -71,6 +72,8 @@ public class SubjectsRequest {
 
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        Log.e("error volley", "eero", error);
+
                         // TODO Auto-generated method stub
 
                     }

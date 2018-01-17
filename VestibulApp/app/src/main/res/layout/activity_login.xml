@@ -14,22 +14,19 @@
         android:layout_height="wrap_content"
         />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/logo_vestibulapp"
+        android:layout_width="215dp"
+        android:layout_height="63dp"
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="150dp"
-        android:fontFamily="cursive"
-        android:text="VestibulApp"
-        android:textColor="#0000d3"
-        android:textSize="32dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/vestibulap_txt" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -44,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/logo_vestibulapp">
 
         <EditText
             android:id="@+id/login_email"

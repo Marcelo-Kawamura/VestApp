@@ -25,6 +25,7 @@ public class SubjectsActivity extends  BaseActivity implements SubjectsRequest.S
         setContentView(R.layout.activity_subjects);
         SubjectsRequest subjectsRequest = new SubjectsRequest(this);
         subjectsRequest.sendRequest();
+        Log.d("msg", "chegou aqui depois do request");
     }
     @Override
     public void onSubjectsResponse(ArrayList<Subject> subjectsList) {

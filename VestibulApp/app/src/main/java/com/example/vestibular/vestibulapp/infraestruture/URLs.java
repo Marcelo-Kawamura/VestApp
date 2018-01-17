@@ -5,7 +5,7 @@ package com.example.vestibular.vestibulapp.infraestruture;
  */
 
 public class URLs {
-    static private final String path = "http://localhost:9001/api/v1";
+    static private final String path = "http://vestapp.000webhostapp.com/api/v1";
     static private final String SESSIONS_URL = "/sessions";
     static private final String USERS_URL = "/users";
     static private final String SUBJECTS_URL = "/subjects";

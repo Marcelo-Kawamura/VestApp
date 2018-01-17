@@ -1,4 +1,4 @@
-package com.example.vestibular.vestibulapp.presentation;
+package com.example.vestibular.vestibulapp.presentation.results;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
