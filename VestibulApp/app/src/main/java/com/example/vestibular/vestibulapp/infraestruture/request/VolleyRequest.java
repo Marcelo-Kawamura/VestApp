@@ -1,10 +1,13 @@
 package com.example.vestibular.vestibulapp.infraestruture.request;
 
+import android.util.Log;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.vestibular.vestibulapp.infraestruture.Constants;
 import com.example.vestibular.vestibulapp.infraestruture.parser.BaseParser;
 
 import org.json.JSONObject;
@@ -25,6 +28,7 @@ import java.util.Map;
         this.listener = listener;
         this.baseParser = baseParser;
         this.url=url;
+        Log.d("url volley", url);
         this.TAG = TAG;
     }
     private void setUpRequest(final Map params, final int METHOD){
@@ -32,15 +36,19 @@ import java.util.Map;
                 (METHOD, url, new JSONObject(params), new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        String checkNull = "";
                         try {
-                            response = response.getJSONObject("data");
-                            if (response.has("null")) {
+                            checkNull = response.getString("status");
+                            if(checkNull== Constants.EMPTY_RESPONSE_TAG){
                                 listener.onResponseEmpty();
+                                Log.d("entrou no checknull","sim");
                             } else {
                                 listener.onResponse(baseParser.jsonToEntity(response));
+                                Log.d("entrou no checknull","não");
                             }
                         }
                         catch (Exception ex){
+                            Log.e("VolleyRequest", "SetUpRequest:", ex);
                             //TODO Criar tratamento de exception quando há falhas ao pegar dados
                         }
 

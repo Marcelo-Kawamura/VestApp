@@ -11,6 +11,7 @@ public class Constants {
     static final public String TOPICS_TAG = "topics";
     static final public String TOPICS_BY_SUBJECT_TAG = "topics_by_subject";
     static final public String INITIALIZE_STACK_TAG = "initialize_stack";
+    static final public String EMPTY_RESPONSE_TAG = "-1";
 
 
     static final public String STACK_PROBLEM_REQUEST_TAG = "problem_tag";

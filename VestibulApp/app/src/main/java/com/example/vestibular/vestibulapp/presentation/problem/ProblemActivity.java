@@ -37,6 +37,7 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
     private int topic_id;
     private int lastProblemId;
     private int lastAnswer;
+    private int game_id;
     // mock variable
     private Problem currentProblem;
     int i=-1;
@@ -47,12 +48,14 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
         setContentView(R.layout.activity_problem);
         Intent intent = getIntent();
         topic_id = intent.getIntExtra("topic_id",0);
+        game_id = intent.getIntExtra("game_id",0);
         activeFragment = new Fragment();
+
         lastProblemId = -1;
         lastAnswer = -1;
-        //first problem
 
-        ProblemRequest.getProblemFromStack(this,lastProblemId,lastAnswer,topic_id);
+        //first problem
+        ProblemRequest.getProblemFromStack(this,lastProblemId,lastAnswer,topic_id, game_id);
 
     }
     public void showProblemForUser(){
@@ -87,7 +90,7 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
     }
     public void requestNextProblem(){
         lastProblemId = currentProblem.getId();
-        ProblemRequest.getProblemFromStack(this,lastProblemId,lastAnswer,topic_id);
+        ProblemRequest.getProblemFromStack(this,lastProblemId,lastAnswer,topic_id,game_id);
     }
 
     public void setOneProblemFragment(Problem problem,ProblemListener listener){
@@ -107,6 +110,7 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
 
     @Override
     public void onProblemsRequestResponse(Problem problem) {
+        Log.d("Problem", "onProblemsRequestResponse");
         currentProblem = problem;
         showProblemForUser();
     }

@@ -9,6 +9,7 @@ public class ProblemTrueFalse extends Problem {
     private String description;
     private String solution;
     private int sequence;
+    private int game_id;
     private boolean answerKey;
     public ProblemTrueFalse(int id,
                             int topic,
@@ -19,11 +20,13 @@ public class ProblemTrueFalse extends Problem {
                             String trueComplementaryStatement,
                             String falseComplementaryStatement,
                             String solution,
-                            int sequence){
+                            int sequence,
+                            int game_id){
         super(id,topic,type);
         this.problemTrueFalseId = trueFalseProblemId;
         this.solution = solution;
         this.sequence = sequence;
+        this.game_id = game_id;
         int descriptionChose = (int)(Math.random()*4);
 
         switch (descriptionChose){
@@ -65,4 +68,6 @@ public class ProblemTrueFalse extends Problem {
     public int getSequence() {
         return sequence;
     }
+
+    public int getGameID(){return game_id;}
 }

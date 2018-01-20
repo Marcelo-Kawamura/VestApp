@@ -1,5 +1,7 @@
 package com.example.vestibular.vestibulapp.infraestruture.parser;
 
+import android.util.Log;
+
 import com.example.vestibular.vestibulapp.domain.entity.Problem;
 
 import org.json.JSONObject;
@@ -12,12 +14,13 @@ public class ProblemParser implements BaseParser {
     @Override
     public Object jsonToEntity(JSONObject response) {
         try{
-        if(response.getInt("status")==0){
-            return null;
-        }else{
-            response = response.getJSONObject("data");
-            if(response.has("problem_type_id")){
-
+            if(response.getInt("status")==0){
+                return null;
+            }else if(response.getInt("status")==-1){
+                return null;
+            }else{
+                response = response.getJSONObject("data");
+                if(response.has("problem_type_id")){
                     switch(response.getInt("problem_type_id")){
                         case 1:
                             ProblemTrueFalseParser problemTrueFalseParser = new ProblemTrueFalseParser();
@@ -25,10 +28,11 @@ public class ProblemParser implements BaseParser {
                         default:
                             return null;
                     }
+                }
+                return null;
             }
-            return null;
-        }
         }catch(Exception ex){
+            Log.e("ProblemParser", "jsonToEntity", ex);
             return null;
         }
     }

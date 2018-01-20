@@ -1,5 +1,7 @@
 package com.example.vestibular.vestibulapp.infraestruture.request;
 
+import android.util.Log;
+
 import com.android.volley.VolleyError;
 import com.example.vestibular.vestibulapp.domain.entity.Problem;
 import com.example.vestibular.vestibulapp.domain.entity.Session;
@@ -16,11 +18,12 @@ import java.util.Map;
  */
 
 public class ProblemRequest {
-    static public void getProblemFromStack(final OnResponseListener listener,final int problemId,final int answer,int topicId) {
+    static public void getProblemFromStack(final OnResponseListener listener,final int problemId,final int answer,int topicId, int game_id) {
         final Map<String, Integer> params = new HashMap<String, Integer>();
         params.put("student_id", Session.getInstance().getUser().getId());
         params.put("problem_id", problemId);
         params.put("correct", answer);
+        params.put("game_id", game_id);
         VolleyRequest volleyRequest = new VolleyRequest(new ProblemParser(), URLs.getUrlWithValue(Constants.STACK_PROBLEM_REQUEST_TAG,Integer.toString(topicId)), Constants.STACK_PROBLEM_REQUEST_TAG,new VolleyRequest.OnResponseListener(){
             @Override
             public void onResponse(Object entity) {
@@ -28,6 +31,7 @@ public class ProblemRequest {
             }
             @Override
             public void onResponseError(VolleyError error) {
+                Log.e("ProblemRequest", "onResponse", error);
                 listener.onProblemsRequestError();
             }
 

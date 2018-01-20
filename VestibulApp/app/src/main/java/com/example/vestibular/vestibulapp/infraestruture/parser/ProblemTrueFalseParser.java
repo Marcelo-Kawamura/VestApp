@@ -1,5 +1,7 @@
 package com.example.vestibular.vestibulapp.infraestruture.parser;
 
+import android.util.Log;
+
 import com.example.vestibular.vestibulapp.domain.entity.ProblemTrueFalse;
 
 import org.json.JSONObject;
@@ -22,6 +24,7 @@ public class ProblemTrueFalseParser implements BaseParser{
         String falseComplementaryStatement;
         String solution;
         int sequence;
+        int game_id;
         try {
             id = Integer.parseInt(response.getString("problem_id"));
             topic = Integer.parseInt(response.getString("topic_id"));
@@ -32,10 +35,15 @@ public class ProblemTrueFalseParser implements BaseParser{
             falseStatement = response.getString("false_statement");
             trueComplementaryStatement = response.getString("true_complementary_statement");
             falseComplementaryStatement = response.getString("false_complementary_statement");
+            game_id = Integer.parseInt(response.getString("game_id"));
             solution = response.getString("solution");
-            return new ProblemTrueFalse(id,topic,type,trueFalseProblemId,trueStatement,falseStatement,trueComplementaryStatement,falseComplementaryStatement,solution,sequence);
 
-        }catch(Exception ex){}
-        return null;
+            return new ProblemTrueFalse(id,topic,type,trueFalseProblemId,trueStatement,falseStatement,trueComplementaryStatement,falseComplementaryStatement,solution,sequence,game_id);
+
+        }catch(Exception ex){
+            Log.e("trueFalseParser", "JsontoEntity", ex);
+            return null;
+        }
+
     }
 }
