@@ -36,12 +36,14 @@ import java.util.Map;
                 (METHOD, url, new JSONObject(params), new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        String checkNull = "";
+                        int checkNull;
                         try {
-                            checkNull = response.getString("status");
-                            if(checkNull== Constants.EMPTY_RESPONSE_TAG){
-                                listener.onResponseEmpty();
+                            checkNull = response.getInt("status");
+                            Log.d("checkNull:", String.valueOf(checkNull));
+                            if(checkNull == Constants.EMPTY_RESPONSE_TAG){
                                 Log.d("entrou no checknull","sim");
+                                listener.onResponseEmpty(baseParser.jsonToEntity(response));
+
                             } else {
                                 listener.onResponse(baseParser.jsonToEntity(response));
                                 Log.d("entrou no checknull","não");
@@ -78,7 +80,7 @@ import java.util.Map;
     public interface OnResponseListener{
         void onResponse(Object entity);
         void onResponseError(VolleyError error);
-        void onResponseEmpty();
+        void onResponseEmpty(Object entity);
 
     }
 }

@@ -34,9 +34,10 @@ public class SessionRequest {
             }
 
             @Override
-            public void onResponseEmpty() {
+            public void onResponseEmpty(Object entity) {
 
             }
+
         });
         volleyRequest.setPostRequest(params);
     }

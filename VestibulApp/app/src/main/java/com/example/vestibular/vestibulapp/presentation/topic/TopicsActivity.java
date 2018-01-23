@@ -83,4 +83,13 @@ public class TopicsActivity extends BaseActivity implements TopicsRequest.Topics
     @Override
     public void onInitializeStackRequestError() {
     }
+
+    @Override
+    public void onInitializeStackEmpty(Object game_id) {
+        Intent intent = new Intent(TopicsActivity.this, ProblemActivity.class);
+        intent.putExtra("topic_id", topic_id);
+        intent.putExtra("subject_id", subject_id);
+        intent.putExtra("game_id", (int) game_id);
+        startActivity(intent);
+    }
 }

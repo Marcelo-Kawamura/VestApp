@@ -30,9 +30,12 @@ public class InitializeStackRequest {
             public void onResponseError(VolleyError error) {
                 listener.onInitializeStackRequestError();
             }
+
             @Override
-            public void onResponseEmpty() {
+            public void onResponseEmpty(Object entity) {
+                listener.onInitializeStackEmpty(entity);
             }
+
         });
 
         volleyRequest.setPostRequest(params);
@@ -41,6 +44,7 @@ public class InitializeStackRequest {
     public interface OnResponseListener{
         public void onInitializeStackResponse(Object game_id);
         public void onInitializeStackRequestError();
+        public void onInitializeStackEmpty(Object game_id);
     }
 }
 

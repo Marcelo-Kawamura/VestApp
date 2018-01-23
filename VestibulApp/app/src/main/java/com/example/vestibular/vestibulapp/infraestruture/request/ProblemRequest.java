@@ -36,9 +36,11 @@ public class ProblemRequest {
             }
 
             @Override
-            public void onResponseEmpty() {
+            public void onResponseEmpty(Object entity) {
                 listener.onProblemsRequestEmpty();
             }
+
+
         });
         volleyRequest.setPostRequest(params);
     }

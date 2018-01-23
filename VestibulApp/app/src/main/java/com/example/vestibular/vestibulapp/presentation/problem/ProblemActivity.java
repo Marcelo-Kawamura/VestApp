@@ -1,6 +1,7 @@
 package com.example.vestibular.vestibulapp.presentation.problem;
 
 import android.app.Fragment;
+import android.arch.lifecycle.ReportFragment;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.MotionEvent;
@@ -24,6 +26,8 @@ import com.example.vestibular.vestibulapp.infraestruture.Constants;
 import com.example.vestibular.vestibulapp.infraestruture.request.InitializeStackRequest;
 import com.example.vestibular.vestibulapp.infraestruture.request.ProblemRequest;
 import com.example.vestibular.vestibulapp.presentation.base.BaseActivity;
+import com.example.vestibular.vestibulapp.presentation.results.ResultsActivity;
+import com.example.vestibular.vestibulapp.presentation.topic.TopicsActivity;
 
 import java.util.ArrayList;
 
@@ -33,6 +37,7 @@ import java.util.ArrayList;
 
 public class ProblemActivity extends BaseActivity implements ProblemRequest.OnResponseListener {
     private TrueFalseFragment trueFalseFragment;
+
     private Fragment activeFragment;
     private int topic_id;
     private int lastProblemId;
@@ -98,8 +103,8 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
             case 1:
                 trueFalseFragment = new TrueFalseFragment();
                 trueFalseFragment.setUpFragment((ProblemTrueFalse)problem, listener);
-                this.getFragmentManager().beginTransaction().remove(activeFragment).commit();
-                this.getFragmentManager().beginTransaction().add(R.id.problem_true_false_fragment, trueFalseFragment).commit();
+              //  this.getFragmentManager().beginTransaction().remove(activeFragment).commit();
+                this.getFragmentManager().beginTransaction().replace(R.id.problem_true_false_fragment, trueFalseFragment).commit();
                 activeFragment = trueFalseFragment;
                 break;
             default:
@@ -117,14 +122,13 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
 
     @Override
     public void onProblemsRequestError() {
-
     }
 
     @Override
     public void onProblemsRequestEmpty() {
-        //TODO - abrir activity de fim
-
-
+        Intent intent = new Intent(ProblemActivity.this, ResultsActivity.class);
+        Log.d("chegou aqui no empty","sim");
+        startActivity(intent);
     }
 
 }
