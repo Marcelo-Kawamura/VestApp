@@ -1,25 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorMain"
     android:id="@+id/container_all">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="140dp"
-        android:text="Fragmento para resultado"
-        app:layout_constraintStart_toStartOf="parent"
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textColor="#ffffff"
-        android:layout_marginLeft="108dp" />
+        android:layout_marginTop="30dp"
+        tools:layout_editor_absoluteX="0dp">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtView_topic_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="serif"
+                android:text="Show topic name"
+                android:textAllCaps="true"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
+        </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/layout_performance"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/results_border"
+            android:orientation="vertical"
+            android:layout_below="@id/header">
+            <TextView
+                android:id="@+id/txtView_performance"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="serif"
+                android:gravity="center|right"
+                android:text="Nota"
+                android:textAllCaps="true"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+            <TextView
+                android:id="@+id/txtView_grade"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:fontFamily="serif"
+                android:gravity="center|right"
+                android:text="10.0"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_progress"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/results_border"
+            android:orientation="vertical"
+            android:layout_below="@id/layout_performance">
+            <TextView
+                android:id="@+id/txtView_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="serif"
+                android:gravity="center|right"
+                android:text="Andamento"
+                android:textAllCaps="true"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+            <TextView
+                android:id="@+id/txtView_progress_value"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:fontFamily="serif"
+                android:gravity="center|right"
+                android:text="10.0"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_errors"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/results_border"
+            android:orientation="vertical"
+            android:layout_below="@id/layout_progress">
+            <TextView
+                android:id="@+id/txtView_errors"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="serif"
+                android:gravity="center|right"
+                android:text="Erros"
+                android:textAllCaps="true"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+            <TextView
+                android:id="@+id/txtView_n_errors"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:fontFamily="serif"
+                android:gravity="center|right"
+                android:text="10"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 
 </android.support.constraint.ConstraintLayout>

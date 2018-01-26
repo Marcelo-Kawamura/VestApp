@@ -29,6 +29,8 @@ public class TopicsActivity extends BaseActivity implements TopicsRequest.Topics
     Problem problem;
     TopicAdapter customAdapter;
     String subject_icon;
+    String subject_name;
+    String topic_name;
     int topic_id;
     int subject_id;
 
@@ -42,10 +44,9 @@ public class TopicsActivity extends BaseActivity implements TopicsRequest.Topics
 
         Intent intent = getIntent();
         int subject_id = intent.getIntExtra("subject_id",0);
-        String subject_name = intent.getStringExtra("subject_name");
+        subject_name = intent.getStringExtra("subject_name");
         subject_icon = intent.getStringExtra("subject_icon");
 
-        Log.d("TopisActivity", subject_name);
         TextView txtViewSubject = (TextView) findViewById(R.id.txtViewTopics);
         TopicsRequest topicsRequest = new TopicsRequest(this);
         topicsRequest.sendRequest(subject_id);
@@ -64,8 +65,9 @@ public class TopicsActivity extends BaseActivity implements TopicsRequest.Topics
                 Topic topic = customAdapter.getItemAtPosition(i);
                 topic_id = topic.getTopic_id();
                 subject_id = topic.getSubject_id();
+                topic_name = topic.getTopic_name();
                 InitializeStackRequest.initializeStack(TopicsActivity.this,student_id,1,topic.getTopic_id());
-                Log.d("click",String.valueOf(topic.getTopic_id()) );
+
             }
         });
     }
@@ -75,8 +77,11 @@ public class TopicsActivity extends BaseActivity implements TopicsRequest.Topics
 
         Intent intent = new Intent(TopicsActivity.this, ProblemActivity.class);
         intent.putExtra("topic_id", topic_id);
+        intent.putExtra("topic_name", topic_name);
         intent.putExtra("subject_id", subject_id);
+        intent.putExtra("subject_name",subject_name);
         intent.putExtra("game_id", (int) game_id);
+
         startActivity(intent);
     }
 
@@ -89,7 +94,9 @@ public class TopicsActivity extends BaseActivity implements TopicsRequest.Topics
         Intent intent = new Intent(TopicsActivity.this, ProblemActivity.class);
         intent.putExtra("topic_id", topic_id);
         intent.putExtra("subject_id", subject_id);
+        intent.putExtra("subject_name",subject_name);
         intent.putExtra("game_id", (int) game_id);
+        intent.putExtra("topic_name", topic_name);
         startActivity(intent);
     }
 }

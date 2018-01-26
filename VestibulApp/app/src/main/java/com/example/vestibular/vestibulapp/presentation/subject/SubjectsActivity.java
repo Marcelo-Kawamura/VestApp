@@ -34,11 +34,11 @@ public class SubjectsActivity extends  BaseActivity implements SubjectsRequest.S
         ListView listViewSubjects = (ListView) findViewById(R.id.listView_Subject);
         listViewSubjects.setAdapter(customAdapter);
 
-
         listViewSubjects.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Subject subject = customAdapter.getItemAtPosition(i);
+
                 Intent intent = new Intent(SubjectsActivity.this, TopicsActivity.class);
                 intent.putExtra("subject_id", subject.getSubject_id());
                 intent.putExtra("subject_name", subject.getSubject_name());
@@ -46,7 +46,6 @@ public class SubjectsActivity extends  BaseActivity implements SubjectsRequest.S
                 startActivity(intent);
             }
         });
-        Log.d("Subject name:", subjectsList.get(1).getSubject_name());
 
     }
 

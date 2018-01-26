@@ -39,10 +39,16 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
     private TrueFalseFragment trueFalseFragment;
 
     private Fragment activeFragment;
+
     private int topic_id;
+    private String topic_name;
+    private int subject_id;
+    private String subject_name;
+    private int game_id;
+
     private int lastProblemId;
     private int lastAnswer;
-    private int game_id;
+
     // mock variable
     private Problem currentProblem;
     int i=-1;
@@ -52,8 +58,14 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_problem);
         Intent intent = getIntent();
+
         topic_id = intent.getIntExtra("topic_id",0);
+        topic_name=intent.getStringExtra("topic_name");
+        subject_id=intent.getIntExtra("subject_id",0);
+        subject_name = intent.getStringExtra("subject_name");
         game_id = intent.getIntExtra("game_id",0);
+
+
         activeFragment = new Fragment();
 
         lastProblemId = -1;
@@ -103,7 +115,6 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
             case 1:
                 trueFalseFragment = new TrueFalseFragment();
                 trueFalseFragment.setUpFragment((ProblemTrueFalse)problem, listener);
-              //  this.getFragmentManager().beginTransaction().remove(activeFragment).commit();
                 this.getFragmentManager().beginTransaction().replace(R.id.problem_true_false_fragment, trueFalseFragment).commit();
                 activeFragment = trueFalseFragment;
                 break;
@@ -115,7 +126,6 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
 
     @Override
     public void onProblemsRequestResponse(Problem problem) {
-        Log.d("Problem", "onProblemsRequestResponse");
         currentProblem = problem;
         showProblemForUser();
     }
@@ -127,7 +137,12 @@ public class ProblemActivity extends BaseActivity implements ProblemRequest.OnRe
     @Override
     public void onProblemsRequestEmpty() {
         Intent intent = new Intent(ProblemActivity.this, ResultsActivity.class);
-        Log.d("chegou aqui no empty","sim");
+        intent.putExtra("problem_type_id", currentProblem.getType());
+        intent.putExtra("topic_id", topic_id);
+        intent.putExtra("topic_name",topic_name);
+        intent.putExtra("subject_id",subject_id);
+        intent.putExtra("subject_name", subject_name);
+        intent.putExtra("game_id", game_id);
         startActivity(intent);
     }
 

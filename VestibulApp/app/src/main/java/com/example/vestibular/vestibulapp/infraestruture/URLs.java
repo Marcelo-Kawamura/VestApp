@@ -13,6 +13,7 @@ public class URLs {
     static private final String TOPICS_BY_SUBJECT_URL = "/topics/subject/";
     static private final String STACK_PROBLEMS_URL = "/stackproblems/getnextfromstack/topic/";
     static private final String STACK_PROBLEMS_INITIALIZE_URL = "/stackproblems/initialize";
+    static private final String PERFORMANCE_URL = "/performance";
 
 
     static public String getForRequest(String value){
@@ -27,7 +28,8 @@ public class URLs {
                 return path + TOPICS_URL;
             case Constants.INITIALIZE_STACK_TAG:
                 return path + STACK_PROBLEMS_INITIALIZE_URL;
-
+            case Constants.PERFORMANCE_REQUEST_TAG:
+                return path + PERFORMANCE_URL;
             default:
                 return "";
         }
