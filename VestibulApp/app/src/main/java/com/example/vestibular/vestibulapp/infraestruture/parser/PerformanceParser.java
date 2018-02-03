@@ -13,9 +13,9 @@ import org.json.JSONObject;
 public class PerformanceParser implements BaseParser{
     @Override
     public Object jsonToEntity(JSONObject response){
-        float progress;
-        float performance;
-        int errors;
+        float progress =0;
+        float performance = 0 ;
+        int errors =0;
 
         try{
             int checkStatus = response.getInt("status");
@@ -31,7 +31,8 @@ public class PerformanceParser implements BaseParser{
         }
         catch (Exception ex){
             Log.e("Performance Parser", "parser", ex);
-            return null;
+            return new Performance(0,0,0);
+
         }
 
     }

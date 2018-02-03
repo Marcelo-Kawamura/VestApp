@@ -1,6 +1,8 @@
 package com.example.vestibular.vestibulapp.presentation.results;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +21,8 @@ public class ResultsActivity extends BaseActivity implements PerformanceRequest.
     private int subject_id;
     private String subject_name;
     private int game_id;
+
+    private static FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,19 +46,35 @@ public class ResultsActivity extends BaseActivity implements PerformanceRequest.
     @Override
     public void onPerformanceRequestResponse(Performance performance) {
 
-        Bundle bundle = new Bundle();
+
+
+
+
+
+       Bundle bundle = new Bundle();
         bundle.putString("topic_name",topic_name);
         bundle.putString("progress",String.valueOf(performance.getProgress()) );
-        bundle.putString("performance",String.valueOf(performance.getGrade()));
+        bundle.putString("grade",String.valueOf(performance.getGrade()));
         bundle.putString("errors", String.valueOf(performance.getErrors()));
 
-        ResultsFragment resultsFragment = new ResultsFragment();
-        resultsFragment.setArguments(bundle);
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        //FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        ResultsFragment resultsFragment = ResultsFragment.newInstance(bundle);
+
+        //fragmentTransaction.add(R.id.view_pager_results, resultsFragment);
+
+
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager_results);
-        FragmentComunicator comunicator = new FragmentComunicator(getSupportFragmentManager());
+        FragmentComunicator comunicator = new FragmentComunicator(fragmentManager,bundle);
+
+
         viewPager.setAdapter(comunicator);
         viewPager.setCurrentItem(0);
+
+
     }
 
     @Override

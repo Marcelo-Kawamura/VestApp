@@ -16,7 +16,8 @@ public class Constants {
     static final public String PERFORMANCE_REQUEST_TAG = "performance";
 
     static final public int SESSIONS_START_USER_NULL = -1;
-    static final public int TIMEOUT_PROGRESS_BAR_SETUP = 2000;
+    static final public int TIMEOUT_PROGRESS_BAR_SETUP = 100;
+    static final public int TIMEOUT_RESULTS_FRAGMENT_SETUP = 1000;
     static final public int DELAY_NEXT_QUESTION = 1000;
 
 

@@ -44,7 +44,7 @@ public class ProgressBarFragment extends Fragment{
                 public void run() {
                     setUpProgressBar();
                 }
-            }, Constants.TIMEOUT_PROGRESS_BAR_SETUP/100);
+            }, Constants.TIMEOUT_PROGRESS_BAR_SETUP);
         }
         delay = 0;
         progressBarRelativeLayout = (RelativeLayout) view.findViewById(R.id.progress_bar_layout);

@@ -4,13 +4,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.vestibular.vestibulapp.R;
+import com.example.vestibular.vestibulapp.infraestruture.Constants;
 
 public class ResultsFragment extends Fragment {
 
@@ -18,26 +21,36 @@ public class ResultsFragment extends Fragment {
     public String topic_name;
     public String progress;
     public String grade;
-    public int errors;
+    public String errors;
+    public View view;
 
 
 
+
+    int delay = 0;
     public ResultsFragment() {
         // Required empty public constructor
     }
 
+    public static ResultsFragment newInstance(Bundle bundle){
+        ResultsFragment resultsFragment=new ResultsFragment();
+        resultsFragment.setArguments(bundle);
+        return resultsFragment;
+    }
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Bundle bundle = this.getArguments();
-        topic_name=bundle.getString("topic_name");
-
-
-
-
+        try{
+            topic_name = getArguments().getString("topic_name");
+            progress = getArguments().getString("progress");
+            grade = getArguments().getString("grade");
+            errors = getArguments().getString("errors");
+        }
+        catch (Exception ex){
+            Log.e("ResultsFragment","onCreate",ex);
+        }
     }
 
     @Override
@@ -45,10 +58,43 @@ public class ResultsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        TextView topic_name_txtView = (TextView) container.findViewById(R.id.txtView_topic_name);
-        topic_name_txtView.setText(topic_name);
-        return inflater.inflate(R.layout.fragment_results, container, false);
+        view = inflater.inflate(R.layout.fragment_results, container, false);
+        setUpFragment();
+        return view;
     }
+
+    public void setUpFragment(){
+        if(view==null){
+            if(delay++>100){
+                delay = 0;
+                return;
+            }
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    setUpFragment();
+                }
+            }, Constants.TIMEOUT_RESULTS_FRAGMENT_SETUP);
+        }else{
+            delay = 0;
+
+            TextView txtView_topic_name = (TextView) view.findViewById(R.id.txtView_topic_name);
+            TextView txtView_progress_value = (TextView) view.findViewById(R.id.txtView_progress_value);
+            TextView txtView_grade = (TextView) view.findViewById(R.id.txtView_grade);
+            TextView txtView_n_errors = (TextView) view.findViewById(R.id.txtView_n_errors);
+
+
+            txtView_topic_name.setText(topic_name);
+            txtView_progress_value.setText(progress);
+            txtView_grade.setText(grade);
+            txtView_n_errors.setText(errors);
+        }
+
+    }
+
+
+
 
 
 }
